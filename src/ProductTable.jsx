@@ -162,6 +162,7 @@ export default function ProductTable({
       size="middle"
       scroll={{ x: 'max-content' }}
       rowClassName={rowClassName}
+      sticky
     />
   );
 }

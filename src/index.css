@@ -69,7 +69,6 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
 /* Enhanced table styles */
 .ant-table-thead > tr > th {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
