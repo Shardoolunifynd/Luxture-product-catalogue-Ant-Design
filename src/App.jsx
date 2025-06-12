@@ -41,8 +41,18 @@ export default function App() {
     fetch(SHEET_API_URL)
       .then(res => res.json())
       .then(data => {
-        setProducts(data);
-        setFiltered(data);
+        // Normalize keys for each product
+        const normalizeProduct = (p) => ({
+          'Serial No': p['Serial No']?.toString().trim() || p['Serial No'] || p['serial no'] || '',
+          'Product Name': p['Product Name']?.toString().trim() || p['Product Name'] || p['product name'] || '',
+          'Image URL': p['Image URL']?.toString().trim() || p['Image URL'] || p['image url'] || '',
+          'Price': p['Price'],
+          'Points': p['Points'],
+          'Extra': p['Extra'],
+        });
+        const normalized = data.map(normalizeProduct);
+        setProducts(normalized);
+        setFiltered(normalized);
         setLoading(false);
       })
       .catch(() => setLoading(false));
