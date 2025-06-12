@@ -160,17 +160,7 @@ export default function App() {
       boxSizing: 'border-box'
     }}>
       {/* Sticky top bar for title and filters */}
-      <div style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 100,
-        background: 'rgba(255,255,255,0.95)',
-        boxShadow: '0 2px 8px 0 rgba(0,0,0,0.04)',
-        borderRadius: '12px',
-        marginBottom: '24px',
-        padding: '16px 0 8px 0',
-        width: '100%'
-      }}>
+      <div className="sticky-top-bar">
         <Card style={{ margin: 0, borderRadius: '12px', boxShadow: 'none', background: 'transparent' }} bodyStyle={{ padding: 0 }}>
           <Title level={2} style={{ 
             textAlign: 'center', 
