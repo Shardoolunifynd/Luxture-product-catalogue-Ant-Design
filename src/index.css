@@ -92,9 +92,9 @@ button:focus-visible {
   width: 100%;
 }
 
-/* Make AntD sticky header appear below top bar */
+/* Set the sticky table header offset to match only the sticky top bar height */
 .ant-table-sticky-holder {
-  top: 64px !important; /* Adjust if your sticky bar is taller/shorter */
+  top: 64px !important; /* Adjust this to match your .sticky-top-bar height */
   z-index: 105 !important;
   background: white;
 }
