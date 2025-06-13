@@ -228,27 +228,29 @@ export default function App() {
 
       <Card style={{ borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', width: '100%' }}>
         <Spin spinning={loading} tip="Loading products..." size="large">
-          <ProductTable
-            data={filtered.slice((page - 1) * pageSize, page * pageSize)}
-            loading={loading}
-            page={page}
-            pageSize={pageSize}
-            setPage={setPage}
-            setPageSize={setPageSize}
-            rowKey={r => `${r['Serial No']}-${r['Product Name']}`}
-            onRow={record => ({ 
-              onClick: () => setModal({ visible: true, product: record }),
-              style: { cursor: 'pointer' }
-            })}
-            rowClassName={(record, index) => 
-              index % 2 === 0 ? 'table-row-light' : 'table-row-dark'
-            }
-            pagination={false}
-          />
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'space-between', 
-            alignItems: 'center', 
+          <div className="table-responsive">
+            <ProductTable
+              data={filtered.slice((page - 1) * pageSize, page * pageSize)}
+              loading={loading}
+              page={page}
+              pageSize={pageSize}
+              setPage={setPage}
+              setPageSize={setPageSize}
+              rowKey={r => `${r['Serial No']}-${r['Product Name']}`}
+              onRow={record => ({
+                onClick: () => setModal({ visible: true, product: record }),
+                style: { cursor: 'pointer' }
+              })}
+              rowClassName={(record, index) =>
+                index % 2 === 0 ? 'table-row-light' : 'table-row-dark'
+              }
+              pagination={false}
+            />
+          </div>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
             marginTop: '24px',
             padding: '16px 0'
           }}>
