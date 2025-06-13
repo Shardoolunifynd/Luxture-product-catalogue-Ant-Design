@@ -189,6 +189,7 @@ export default function App() {
         </Card>
       </div>
 
+      {/* This summary card should NOT be sticky */}
       <Card style={{ marginBottom: '24px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', width: '100%' }}>
         <Row gutter={16}>
           <Col span={6}>
